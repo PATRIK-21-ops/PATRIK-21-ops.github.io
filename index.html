@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Desarrollador de Software</title>
+    <style>
+        /* Estilos generales y paleta de colores */
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #cbd5e1;
+            --accent-color: #38bdf8;
+            --card-bg: #1e293b;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #f8fafc;
+        }
+
+        /* Cabecera y Navegación */
+        header {
+            background-color: #020617;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #1e293b;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #f8fafc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Contenedor Principal */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Tarjetas de Habilidades y Proyectos (Uso de article) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        article {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        article h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #020617;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--card-bg);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA -->
+    <header>
+        <h1>Tu Nombre Aquí</h1>
+        <p>Desarrollador de Software | Front-End & Videojuegos</p>
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#ambiciones">Futuro</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        
+        <!-- SECCIÓN: SOBRE MÍ -->
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>
+                Tengo 22 años y me encuentro en la recta final del grado en Ingeniería Informática en la Escuela Superior de Ingeniería Informática (ESII). Me considero un profesional versátil, con un perfil técnico sólido y una gran vocación por el diseño y la creación de experiencias interactivas.
+            </p>
+            <p>
+                Mi trayectoria no se limita a los teclados. Haber trabajado en sectores de alta exigencia física y trato directo al público, como la construcción y la hostelería, me ha forjado una gran resistencia al estrés. Estas experiencias me han dotado de capacidades fundamentales para el desarrollo de software: <strong>adaptación rápida a situaciones complejas, gestión eficiente del trabajo bajo presión, escucha activa y un sólido trabajo en equipo</strong>.
+            </p>
+        </section>
+
+        <!-- SECCIÓN: HABILIDADES -->
+        <section id="habilidades">
+            <h2>Habilidades Técnicas y Conocimientos</h2>
+            <div class="grid-container">
+                <article>
+                    <h3>Lenguajes y Programación</h3>
+                    <p>Experiencia trabajando con múltiples paradigmas y niveles de abstracción:</p>
+                    <ul>
+                        <li>Java, C, Python</li>
+                        <li>Programación en Ensamblador</li>
+                        <li>Arquitectura de software y programación concurrente</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>Entornos y Sistemas</h3>
+                    <p>Dominio de herramientas de despliegue, bases de datos y control de versiones:</p>
+                    <ul>
+                        <li>Docker (gestión de puertos y redes)</li>
+                        <li>Máquinas Virtuales</li>
+                        <li>Bases de datos relacionales (Oracle, PostgreSQL)</li>
+                        <li>Git, GitHub, Visual Studio Enterprise y VS Code</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>Ética y Derecho Informático</h3>
+                    <p>Conocimientos sólidos en aspectos profesionales, legales y éticos del software:</p>
+                    <ul>
+                        <li>Normativas de protección de datos (RGPD) y LSSI-CE</li>
+                        <li>Sistemas de firma electrónica y certificados digitales</li>
+                        <li>Propiedad intelectual en el ámbito digital</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PROYECTOS -->
+        <section id="proyectos">
+            <h2>Experiencia y Proyectos</h2>
+            <div class="grid-container">
+                <article>
+                    <h3>Desarrollo de Videojuegos y Apps</h3>
+                    <p>Participación en el desarrollo de betas de videojuegos, aplicando mi interés por el diseño de mecánicas y la experiencia de usuario (UX). Creación de aplicaciones para dispositivos móviles centradas en el rendimiento.</p>
+                </article>
+
+                <article>
+                    <h3>Desarrollo Web y Herramientas</h3>
+                    <p>Creación de páginas web con arquitecturas de información claras (como sistemas de comercio y plataformas interactivas). Desarrollo de software a medida, desde la lógica de calculadoras hasta integraciones complejas.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: AMBICIONES -->
+        <section id="ambiciones">
+            <h2>Hacia dónde me dirijo</h2>
+            <p>
+                Tengo un interés especial en la intersección entre el código y el diseño. A corto y medio plazo, mis objetivos profesionales se centran en dos grandes áreas:
+            </p>
+            <ul>
+                <li><strong>Desarrollo Front-End:</strong> Crear interfaces de usuario visualmente impactantes, accesibles y optimizadas.</li>
+                <li><strong>Inteligencia Artificial:</strong> Profundizar en el funcionamiento interno y desarrollo de IAs (algoritmos de búsqueda, árboles de decisión, etc.) para integrarlas en aplicaciones web y mecánicas de videojuegos.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 Tu Nombre. Creado con pasión y código.</p>
+        <p>Visita mi perfil en <a href="https://github.com/PATRIK-21-ops" style="color: var(--accent-color); text-decoration: none;">GitHub</a>.</p>
+    </footer>
+
+</body>
+</html>
