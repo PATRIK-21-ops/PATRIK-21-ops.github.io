@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Desarrollador de Software</title>
+    <title>Portfolio | Patrik Lopes - Desarrollador de Software</title>
     <style>
         /* Estilos generales y paleta de colores */
         :root {
@@ -11,6 +11,11 @@
             --text-color: #cbd5e1;
             --accent-color: #38bdf8;
             --card-bg: #1e293b;
+        }
+        
+        /* Desplazamiento suave para los enlaces del menú */
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
@@ -29,30 +34,66 @@
         /* Cabecera y Navegación */
         header {
             background-color: #020617;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
             border-bottom: 3px solid var(--accent-color);
+            animation: fadeInDown 1s ease-out;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin: 0;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         header p {
             font-size: 1.2rem;
             color: var(--accent-color);
             margin-top: 10px;
+            margin-bottom: 2rem;
+        }
+
+        /* Botones generales */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #020617;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: #020617;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
         }
 
         nav {
-            background-color: #1e293b;
+            background-color: rgba(30, 41, 59, 0.95);
             padding: 1rem;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(5px);
         }
 
         nav a {
@@ -60,11 +101,13 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
         }
 
         nav a:hover {
             color: var(--accent-color);
+            transform: translateY(-2px);
         }
 
         /* Contenedor Principal */
@@ -72,10 +115,12 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         section {
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
+            scroll-margin-top: 80px;
         }
 
         section h2 {
@@ -83,21 +128,28 @@
             border-bottom: 2px solid var(--card-bg);
             padding-bottom: 10px;
             margin-bottom: 1.5rem;
+            display: inline-block;
         }
 
-        /* Tarjetas de Habilidades y Proyectos (Uso de article) */
+        /* Tarjetas (article) */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         article {
             background-color: var(--card-bg);
-            padding: 1.5rem;
+            padding: 1.8rem;
             border-radius: 8px;
             border-left: 4px solid var(--accent-color);
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.15);
         }
 
         article h3 {
@@ -105,8 +157,44 @@
             color: var(--accent-color);
         }
 
+        /* VIÑETAS PERSONALIZADAS */
         ul {
-            padding-left: 20px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        li::before {
+            content: '❯';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        li:hover::before {
+            transform: translateX(4px);
+        }
+
+        /* Sección de Contacto */
+        .contacto-container {
+            text-align: center;
+            background-color: var(--card-bg);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .contacto-container p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         /* Pie de página */
@@ -122,14 +210,25 @@
             margin: 0;
             font-size: 0.9rem;
         }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
 
     <!-- CABECERA -->
     <header>
-        <h1>PATRIK</h1>
+        <h1>Patrik Lopes</h1>
         <p>Desarrollador de Software | Front-End & Videojuegos</p>
+        <a href="CV_Patrik.pdf" download class="btn">Descargar Currículum (PDF)</a>
     </header>
 
     <!-- MENÚ DE NAVEGACIÓN -->
@@ -137,7 +236,7 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#habilidades">Habilidades</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#ambiciones">Futuro</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
@@ -206,25 +305,25 @@
                 </article>
             </div>
         </section>
-
-        <!-- SECCIÓN: AMBICIONES -->
-        <section id="ambiciones">
-            <h2>Hacia dónde me dirijo</h2>
-            <p>
-                Tengo un interés especial en la intersección entre el código y el diseño. A corto y medio plazo, mis objetivos profesionales se centran en dos grandes áreas:
-            </p>
-            <ul>
-                <li><strong>Desarrollo Front-End:</strong> Crear interfaces de usuario visualmente impactantes, accesibles y optimizadas.</li>
-                <li><strong>Inteligencia Artificial:</strong> Profundizar en el funcionamiento interno y desarrollo de IAs (algoritmos de búsqueda, árboles de decisión, etc.) para integrarlas en aplicaciones web y mecánicas de videojuegos.</li>
-            </ul>
+        
+        <!-- SECCIÓN: CONTACTO -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contacto-container">
+                <p>¿Tienes un proyecto en mente o quieres que hablemos sobre oportunidades laborales? ¡No dudes en contactarme!</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="mailto:lopespatrik58@gmail.com" class="btn">Envíame un Email</a>
+                    <a href="https://www.linkedin.com/in/patrik-lopes-bulhoes-de-oliveira-522507359/" target="_blank" class="btn btn-outline">Conectar en LinkedIn</a>
+                    <a href="https://github.com/PATRIK-21-ops" target="_blank" class="btn btn-outline">Ver mi GitHub</a>
+                </div>
+            </div>
         </section>
 
     </main>
 
     <!-- PIE DE PÁGINA -->
     <footer>
-        <p>&copy; 2026 Tu Nombre. Creado con pasión y código.</p>
-        <p>Visita mi perfil en <a href="https://github.com/PATRIK-21-ops" style="color: var(--accent-color); text-decoration: none;">GitHub</a>.</p>
+        <p>&copy; 2026 Patrik Lopes. Creado con pasión y código.</p>
     </footer>
 
 </body>
