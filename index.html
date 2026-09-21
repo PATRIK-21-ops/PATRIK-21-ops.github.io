@@ -187,8 +187,9 @@
             transform: translateX(4px);
         }
 
-        /* Sección de Contacto y Formulario */
+        /* Sección de Contacto */
         .contacto-container {
+            text-align: center;
             background-color: var(--card-bg);
             padding: 3rem 2rem;
             border-radius: 8px;
@@ -236,6 +237,17 @@
         form input[type="checkbox"] {
             transform: scale(1.2);
             margin-right: 10px;
+        }
+
+        /* Galería de capturas (Peak Choice) */
+        .screenshot-gallery {
+            display: flex; gap: 15px; margin-top: 15px; overflow-x: auto; padding-bottom: 10px;
+        }
+        
+        .screenshot-gallery img {
+            width: 140px; height: auto; border-radius: 8px; 
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
 
         /* Pie de página */
@@ -334,6 +346,7 @@
         <section id="proyectos">
             <h2>Experiencia y Proyectos</h2>
             <div class="grid-container">
+                
                 <article>
                     <h3>Desarrollo de Videojuegos y Apps</h3>
                     <p>Participación en el desarrollo de betas de videojuegos simples y sencillos, aplicando mi interés por el diseño y la experiencia de usuario. Creación de aplicaciones para dispositivos móviles centradas en el rendimiento y .</p>
@@ -343,6 +356,24 @@
                     <h3>Desarrollo Web y Herramientas</h3>
                     <p>Creación de páginas web con arquitecturas de información claras (como sistemas de comercio y plataformas interactivas). Desarrollo de software a medida, desde la lógica de calculadoras hasta integraciones complejas.</p>
                 </article>
+
+                <article style="grid-column: 1 / -1;">
+                    <h3>Peak Choice (Aplicación de Puntuación de Comidas)</h3>
+                    <p>Se trata de <strong>Peak Choice</strong>, una aplicación enfocada en la puntuación y valoración de comidas. El proyecto incluye el diseño de interfaces modernas para dispositivos móviles y sistemas de inicio de sesión. 
+                        Trabajando de cofundador junto a Luis Lorenzo López (luisloxc.github.io)</p>
+                    
+                    <!-- Contenedor para las capturas de pantalla -->
+                    <div class="screenshot-gallery">
+                        <img src="captura_1.png" alt="Pantalla de Peak Choice 1">
+                        <img src="captura_2.png" alt="Pantalla de Peak Choice 2">
+                        <img src="captura_3.png" alt="Pantalla de Peak Choice 3">
+                        <img src="captura_4.png" alt="Pantalla de Peak Choice 4">
+                        <img src="captura_5.png" alt="Pantalla de Peak Choice 5">
+                        <img src="captura_6.png" alt="Pantalla de Peak Choice 6">
+                        <img src="captura_7.png" alt="Pantalla de Peak Choice 7">
+                    </div>
+                </article>
+
             </div>
         </section>
 
