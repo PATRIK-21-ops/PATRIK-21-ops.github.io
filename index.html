@@ -55,7 +55,7 @@
         }
 
         /* Botones generales */
-        .btn {
+        .btn, button {
             display: inline-block;
             background-color: var(--accent-color);
             color: #020617;
@@ -66,9 +66,13 @@
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
             margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: inherit;
         }
 
-        .btn:hover {
+        .btn:hover, button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
         }
@@ -183,9 +187,8 @@
             transform: translateX(4px);
         }
 
-        /* Sección de Contacto */
+        /* Sección de Contacto y Formulario */
         .contacto-container {
-            text-align: center;
             background-color: var(--card-bg);
             padding: 3rem 2rem;
             border-radius: 8px;
@@ -195,6 +198,44 @@
         .contacto-container p {
             margin-bottom: 2rem;
             font-size: 1.1rem;
+            text-align: center;
+        }
+
+        form fieldset {
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        form legend {
+            color: var(--accent-color);
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        form label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input[type="text"], form input[type="email"], form select, form input[list] {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid #475569;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        form input[type="checkbox"] {
+            transform: scale(1.2);
+            margin-right: 10px;
         }
 
         /* Pie de página */
@@ -295,7 +336,7 @@
             <div class="grid-container">
                 <article>
                     <h3>Desarrollo de Videojuegos y Apps</h3>
-                    <p>Participación en el desarrollo de betas de videojuegos simples y sencillos, aplicando mi interés por el diseño y la experiencia de usuario. Creación de aplicaciones para dispositivos móviles centradas en el rendimiento y en la interfaz.</p>
+                    <p>Participación en el desarrollo de betas de videojuegos simples y sencillos, aplicando mi interés por el diseño y la experiencia de usuario. Creación de aplicaciones para dispositivos móviles centradas en el rendimiento y .</p>
                 </article>
 
                 <article>
@@ -324,11 +365,55 @@
 
             </div>
         </section>
+        
         <!-- SECCIÓN: CONTACTO -->
         <section id="contacto">
             <h2>Contacto</h2>
             <div class="contacto-container">
-                <p>¡No dudes en contactarme!</p>
+                
+                <!-- FORMULARIO DE CONTACTO -->
+                <form method="post" action="/">
+                    <fieldset>
+                        <legend>Información personal</legend>
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" placeholder="Tu nombre y apellidos" required>
+                        
+                        <label for="em">Email:</label>
+                        <input type="email" id="em" placeholder="tu_correo@ejemplo.com" required>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Otros</legend>
+                        
+                        <label for="why">¿Sobre qué quieres contactar?:</label>
+                        <select name="why" id="why">
+                            <option value="1">Trabajo</option>
+                            <option value="2">Consulta</option>
+                            <option value="3">Otros</option>
+                        </select>
+                        
+                        <label>¿Qué lenguaje necesitas ayuda?</label>
+                        <input list="lang" name="lang" placeholder="Selecciona o escribe una opción...">
+                        <datalist id="lang">
+                            <option value="JavaScript"></option>
+                            <option value="Python"></option>
+                            <option value="C++"></option>
+                            <option value="Java"></option>
+                        </datalist>
+
+                        <div style="display: flex; align-items: center; margin-top: 20px;">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms" style="margin: 0;">Acepta los términos de privacidad</label>
+                        </div>
+                    </fieldset>
+
+                    <div style="text-align: center; margin-top: 1.5rem; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <button type="submit" class="btn">Enviar contacto</button>
+                        <button type="reset" class="btn-outline">Borrar formulario</button>
+                    </div>
+                </form>
+                
+                <p style="margin-top: 3rem;">¡No dudes en contactarme por mis redes!</p>
                 <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                     <a href="mailto:lopespatrik58@gmail.com" class="btn">Envíame un Email</a>
                     <a href="https://www.linkedin.com/in/patrik-lopes-bulhoes-de-oliveira-522507359/" target="_blank" class="btn btn-outline">Conectar en LinkedIn</a>
@@ -336,8 +421,6 @@
                 </div>
             </div>
         </section>
-
-
 
     </main>
 
